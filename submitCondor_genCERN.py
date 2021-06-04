@@ -17,7 +17,7 @@ from listFiles import *
 runDir=os.getcwd()
 site = sys.argv[1]
 
-#os.system('xrdcp -f root://cmseos.fnal.gov//store/user/snowmass/DelphesSubmissionLPCcondor/scripts/EOSSafeUtils.py '+runDir)
+os.system('xrdcp -f root://cmseos.fnal.gov//store/user/snowmass/DelphesSubmissionLPCcondor/scripts/EOSSafeUtils.py '+runDir)
 execfile(runDir+'/EOSSafeUtils.py')
 
 start_time = time.time()
@@ -79,7 +79,7 @@ for sample in fileList:
 use_x509userproxy = true
 x509userproxy = {}
 universe = vanilla
-+JobFlavour = tomorrow
++JobFlavour = "tomorrow"
 Executable = {}/GENtoDelphes.sh
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT

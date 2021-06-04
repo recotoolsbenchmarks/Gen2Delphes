@@ -127,7 +127,7 @@ python bin/Ntuplizer.py -i delphes/$FILEOUT -o $NTUPLE
 
 NtupleTime=`date +%s`
 
-echo "Minutes spent running Ntuplizer: " `expr $NtupleTime / 60 - $DelphesTime / 60`
+echo "Time spent running Ntuplizer (s): " `expr $NtupleTime - $DelphesTime`
 echo 
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -142,6 +142,7 @@ if [[ $XRDEXIT -ne 0 ]]; then
     exit $XRDEXIT
 fi
 
+echo "xrdcp -f ${NTUPLE} root://${URL}/${NTUPLEOUT}/${NTUPLE}"
 xrdcp -f ${NTUPLE} root://${URL}/${NTUPLEOUT}/${NTUPLE} 2>&1  ## FNAL
 XRDEXIT=$?
 if [[ $XRDEXIT -ne 0 ]]; then
