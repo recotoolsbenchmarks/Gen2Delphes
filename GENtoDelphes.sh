@@ -43,7 +43,7 @@ DelphesOutput=CMSP2_${nPU}_`echo $FILEIN`.root
 
 # Copy and unpack the tarball
 echo "xrdcp source tarball and pileup file"
-xrdcp -f root://eoscms.cern.ch//store/group/upgrade/RTB/delphes_tarballs/Delphes343pre12_NtuplizerV0.tar tarball.tar
+xrdcp -f root://eoscms.cern.ch//store/group/upgrade/RTB/delphes_tarballs/Delphes350_NtuplizerV0.tar tarball.tar
 XRDEXIT=$?
 if [[ $XRDEXIT -ne 0 ]]; then
     echo "exit code $XRDEXIT, failure in xrdcp of Delphes tarball"

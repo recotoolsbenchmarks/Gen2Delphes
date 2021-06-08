@@ -11,7 +11,7 @@
 #
 # ******************************************************************
 
-import os,sys,time
+import os,sys,time,subprocess
 from listFiles import *
 
 runDir=os.getcwd()
@@ -35,7 +35,7 @@ else:
 
 condorDir='condor_logs'
 
-maxEvtsPerJob = -1 #50000 for production ## -1 --> do not make splitting (1 job per file)
+maxEvtsPerJob = 5000 # -1 --> do not make splitting (1 job per file)
 
 ## Proxy settings differ between CERN and Fermilab...
 print 'Getting proxy'
@@ -86,9 +86,6 @@ WhenToTransferOutput = ON_EXIT
 output  = condor.$(ClusterId).$(ProcId).out
 error   = condor.$(ClusterId).$(ProcId).err
 log     = condor.$(ClusterId).log
-#output = /dev/null
-#error= /dev/null
-#log = /dev/null
 Notification = Never
 """.format(proxyPath,runDir)
 
@@ -103,12 +100,36 @@ Notification = Never
         fname_bare = rootfiles_bare[ifile]
         #print fname_bare
 
-        ### usual submitter if no splitting
-        if not maxEvtsPerJob > -1:
-            outfile = relPath+'_'+str(tempcount)
-            ntuplefile = relPath+'_ntuple_'+str(tempcount)
+        n_jobs = 1
+        if maxEvtsPerJob > -1: ## just query DAS if necessary
+            command = '/cvmfs/cms.cern.ch/common/dasgoclient --query="file='+fname_bare+' | grep file.nevents" '
+            proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
+            (out, err) = proc.communicate()
+            try: nevents = int(out.split('\n')[0])
+            except:
+                try: nevents = int(out.split('\n')[1])
+                except: print 'ERROR: couldnt isolate the number of events'
+
+            n_jobs = int(nevents) / int(maxEvtsPerJob)
+            if int(nevents) % int(maxEvtsPerJob) > 0:
+                n_jobs += 1 ## and extra one to account for the remainder
+
+        ### split based on the number of events
+        for i_split in range(n_jobs):
+
+            outfile = relPath+'_'+str(tempcount)+'_'+str(i_split)
+            ntuplefile = relPath+'_ntuple_'+str(tempcount)+'_'+str(i_split)
             dict={'RUNDIR':runDir, 'RELPATH':relPath, 'FILEIN':infile, 'FILEOUT':outfile, 'OUTPUTDIR':outputDir, 'NTUPLEDIR':ntupleDir, 
                   'NTUPLEOUT':ntuplefile, 'CARD':card, 'URL': url, 'PROXY':proxyPath}
+
+            if maxEvtsPerJob > -1:
+                maxEvents = int(maxEvtsPerJob)
+                skipEvents = int(maxEvtsPerJob*i_split)
+                if i_split == n_jobs-1:
+                   maxEvents = nevents - maxEvtsPerJob*(n_jobs-1) ## up to the last event
+
+                dict={'RUNDIR':runDir, 'RELPATH':relPath, 'FILEIN':infile, 'FILEOUT':outfile, 'OUTPUTDIR':outputDir, 'NTUPLEDIR':ntupleDir, 
+                      'NTUPLEOUT':ntuplefile, 'CARD':card, 'URL': url, 'PROXY':proxyPath, 'SKIPEVENTS':str(skipEvents), 'MAXEVENTS':str(maxEvents)}
 
             delphesfile = '{}/{}_{}/{}.root'.format(outputDir, relPath, pileup, outfile)
             #flatfile = '{}/{}_{}/{}.root'.format(ntupleDir, relPath, pileup, ntuplefile) # Later, could check for missing flat tree and run different resubmission
@@ -117,12 +138,12 @@ Notification = Never
                 count+=1
                 print 'did not find: ', outfile, '  --> (re-)submitting ... '
            
-                argstr="Arguments = %(CARD)s %(FILEIN)s %(OUTPUTDIR)s/%(RELPATH)s_200PU %(FILEOUT)s.root $(NTUPLEOUT)s %(NTUPLEDIR)s/%(RELPATH)s_200PU 200PU %(URL)s\n"%dict
+                argstr="Arguments = %(CARD)s %(FILEIN)s %(OUTPUTDIR)s/%(RELPATH)s_200PU %(FILEOUT)s.root $(NTUPLEOUT)s %(NTUPLEDIR)s/%(RELPATH)s_200PU 200PU %(URL)s"%dict
+                if maxEvtsPerJob > -1: argstr +=" %(MAXEVENTS)s %(SKIPEVENTS)s"%dict
+                argstr+="\n"
                 cmdfile += argstr
                 cmdfile += 'queue\n'
-        else:
-            print 'You want to split this job into chunks and they need to implement that!'
-            exit(1)
+
 
     with open('condor_delphes.sub' , "w") as f:
         f.write(cmdfile)
