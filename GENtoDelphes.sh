@@ -18,24 +18,36 @@ NTUPLE=$5
 NTUPLEOUT=$6
 PILEUP=$7
 URL=$8
-SKIPEVT=$9
-MAXEVT=$10
+MAXEVT=$9
+SKIPEVT=${10}
 
 echo "Starting job on " `date`
 echo "Running on " `uname -a`
 echo "System release " `cat /etc/redhat-release`
 
-if [[ $# -eq 7 ]] ; then
+echo "Card name: ${CARD}"
+echo "Input file: ${FILEIN}"
+echo "Delphes output path: ${OUTPUT}"
+echo "Ntuple output path: ${NTUPLEOUT}"
+echo "Delphes output file: ${FILEOUT}"
+echo "Ntuple output file: ${NTUPLE}"
+echo "Pileup setting: ${PILEUP}"
+echo "XROOTD setting: ${URL}"
+
+if [[ $# -eq 8 ]] ; then
     echo "Setting SkipEvents to 0, no argument given"
     SKIPEVT=0
     echo "Setting MaxEvents to -1, no argument given"
     MAXEVT=-1
 fi
 
+echo "MaxEvents: ${MAXEVT}"
+echo "SkipEvents: ${SKIPEVT}"
+
 # Set variables
 #detCard=CMS_PhaseII_200PU_Snowmass2021_v0.tcl
 energy=14
-DelphesVersion=tags/3.4.3pre12
+DelphesVersion=tags/3.5.0
 nPU=`echo $CARD | cut -d '_' -f 2 | cut -d '.' -f 1`
 process=`echo $FILEIN | cut -d '_' -f 1-2`
 configuration=`echo $CARD | cut -d '_' -f 1-2`
@@ -79,6 +91,9 @@ echo "Running delphes with DelphesNtuplizer/cards/$CARD"
 ## THESE AREN'T ACTUALLY DOING ANYTHING RIGHT NOW IN THE CARD
 sed -i "s|MAXEVENTS|${MAXEVT}|g" cards/$CARD
 sed -i "s|SKIPEVENTS|${SKIPEVT}|g" cards/$CARD
+
+grep 'MaxEvents' cards/$CARD
+grep 'SkipEvents' cards/$CARD
 
 cd delphes/
 ./DelphesCMSFWLite ../cards/$CARD ${FILEOUT} ${FILEIN}

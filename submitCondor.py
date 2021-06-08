@@ -1,142 +1,168 @@
-import os,datetime,time
+# *****************************************************************
+#
+# Submission script for Snowmass 2021 Delphes samples
+#
+# ASSUMPTIONS: you are running on LXPLUS CONDOR
+#
+# ARGUMENTS: choose whether you are sending files to 
+#            CERN EOS or to FNAL EOS
+#    "site":  <CERN, FNAL> this is the site on which you run condor
+#    "store": <CERN, FNAL> this is the site for file storage
+#
+# RUN ME: python -u submitCondor_gen.py <CERN,FNAL> <CERN,FNAL> >& submit.log &
+#
+# ******************************************************************
+
+import os,sys,time,subprocess
+from listFiles import *
+
 runDir=os.getcwd()
+site = sys.argv[1]
+store = sys.argv[2]
 
 os.system('xrdcp -f root://cmseos.fnal.gov//store/user/snowmass/DelphesSubmissionLPCcondor/scripts/EOSSafeUtils.py '+runDir)
 execfile(runDir+'/EOSSafeUtils.py')
 
 start_time = time.time()
+pileup = '200PU'
+card = 'CMS_PhaseII_200PU_Snowmass2021_v0.tcl'
 
-#IO directories must be full paths
-pileup = str(sys.argv[1])
-inputDir='/eos/uscms/store/user/snowmass/HTBinned_LHEfiles/14TEV/' 
-outputDir='/eos/uscms/store/user/snowmass/noreplica/DelphesFromLHE_342pre07_2017July/' # CHANGEME
-condorDir='/uscms_data/d3/jmanagan/DelphesFromLHE_342pre07_2017July_logs/' # Change username, match log directory to the ROOT file directory
+if store == 'CERN':
+    url = 'eoscms.cern.ch'
+    outputDir='/store/group/upgrade/RTB/Snowmass2021_test/Delphes/'
+    ntupleDir='/store/group/upgrade/RTB/Snowmass2021_test/DelphesNtuplizer/'     
+else:
+    url = 'cmseos.fnal.gov'
+    outputDir='/store/user/snowmass/Snowmass2021_test/Delphes/'
+    ntupleDir='/store/user/snowmass/Snowmass2021_test/DelphesNtuplizer/'
 
-cTime=datetime.datetime.now()
+condorDir='condor_logs'
 
-inDir=inputDir[10:]
-outDir=outputDir[10:]
+maxEvtsPerJob = 5000 # -1 --> do not make splitting (1 job per file)
 
+## Proxy settings differ between CERN and Fermilab...
 print 'Getting proxy'
 proxyPath=os.popen('voms-proxy-info -path')
 proxyPath=proxyPath.readline().strip()
+print 'ProxyPath:',proxyPath
+if site == 'CERN':
+    if 'tmp' in proxyPath: 
+        print 'Run source environment.(c)sh and make a new proxy!'
+        exit(1)
 
 print 'Starting submission'
 count=0
 
-dirList = [  # CHOOSE SAMPLES
-    'B-4p-0-1-v1510_14TEV',
-    # 'BB-4p-0-300-v1510_14TEV',
-    # 'BB-4p-1300-2100-v1510_14TEV',
-    # 'BB-4p-2100-100000-v1510_14TEV',
-    # 'BB-4p-300-700-v1510_14TEV',
-    # 'BB-4p-700-1300-v1510_14TEV',
-    # 'Bj-4p-0-300-v1510_14TEV',
-    # 'Bj-4p-1100-1800-v1510_14TEV',
-    # 'Bj-4p-1800-2700-v1510_14TEV',
-    # 'Bj-4p-2700-3700-v1510_14TEV',
-    # 'Bj-4p-300-600-v1510_14TEV',
-    # 'Bj-4p-3700-100000-v1510_14TEV',
-    # 'Bj-4p-600-1100-v1510_14TEV',
-    # 'BBB-4p-0-600-v1510_14TEV',
-    # 'BBB-4p-1300-100000-v1510_14TEV',
-    # 'BBB-4p-600-1300-v1510_14TEV',
-    # 'Bjj-vbf-4p-0-700-v1510_14TEV',
-    # 'Bjj-vbf-4p-1400-2300-v1510_14TEV',
-    # 'Bjj-vbf-4p-2300-3400-v1510_14TEV',
-    # 'Bjj-vbf-4p-700-1400-v1510_14TEV',
-    # 'H-4p-0-300-v1510_14TEV',
-    # 'H-4p-1500-100000-v1510_14TEV',
-    # 'H-4p-300-800-v1510_14TEV',
-    # 'H-4p-800-1500-v1510_14TEV',
-    # 'LL-4p-0-100-v1510_14TEV',
-    # 'LL-4p-100-200-v1510_14TEV',
-    # 'LL-4p-1400-100000-v1510_14TEV',
-    # 'LL-4p-200-500-v1510_14TEV',
-    # 'LL-4p-500-900-v1510_14TEV',
-    # 'LL-4p-900-1400-v1510_14TEV',
-    # 'LLB-4p-0-400-v1510_14TEV',
-    # 'LLB-4p-400-900-v1510_14TEV',
-    # 'LLB-4p-900-100000-v1510_14TEV',
-    # 'tB-4p-0-500-v1510_14TEV',
-    # 'tB-4p-1500-2200-v1510_14TEV',
-    # 'tB-4p-2200-100000-v1510_14TEV',
-    # 'tB-4p-500-900-v1510_14TEV',
-    # 'tB-4p-900-1500-v1510_14TEV',
-    # 'tj-4p-0-500-v1510_14TEV',
-    # 'tj-4p-1000-1600-v1510_14TEV',
-    # 'tj-4p-1600-2400-v1510_14TEV',
-    # 'tj-4p-2400-100000-v1510_14TEV',
-    # 'tj-4p-500-1000-v1510_14TEV',
-    # 'tt-4p-0-600-v1510_14TEV',
-    # 'tt-4p-1100-1700-v1510_14TEV',
-    # 'tt-4p-1700-2500-v1510_14TEV',
-    # 'tt-4p-2500-100000-v1510_14TEV',
-    # 'tt-4p-600-1100-v1510_14TEV',
-    # 'ttB-4p-0-900-v1510_14TEV',
-    # 'ttB-4p-1600-2500-v1510_14TEV',
-    # 'ttB-4p-2500-100000-v1510_14TEV',
-    # 'ttB-4p-900-1600-v1510_14TEV',    
-    ]
+# list of files imported from listFiles.py
+print 'Samples:',fileList
 
-for sample in dirList:
-    os.system('eos root://cmseos.fnal.gov/ mkdir -p '+outDir+sample+'_'+pileup)
-    os.system('eos root://cmseos.fnal.gov/ mkdir -p '+outDir+sample+'_'+pileup+'/metaData')
-    os.system('mkdir -p '+condorDir+sample+'_'+pileup)
-    relPath = sample
-    process = sample.split('-')[0]
-    if process == 'Bjj': process = 'Bjj-vbf'    
+for sample in fileList:
+    if '_'+pileup not in sample: continue
+    with open(os.path.abspath(sample),'r') as rootlist:
+        rootfiles = []
+        rootfiles_bare = []
+        for line in rootlist:
+            # CERN condor: assume we should read from europe
+            if site == 'CERN': 
+                rootfiles.append('root://xrootd-cms.infn.it/'+line.strip())
+            else: 
+                rootfiles.append('root://cmsxrootd.fnal.gov/'+line.strip())
+            rootfiles_bare.append(line.strip())
+ 
+    relPath = sample.replace('.txt','').replace('fileLists/','')
+    if '_'+pileup in relPath: relPath = relPath.replace('_'+pileup,'')
 
-    ### FIGURE OUT YOUR XQCUT 
-    xqcut = 40
-    if 't' in process: xqcut = 60
-    if 'tt' in process: xqcut = 80
-        
-    ### FIGURE OUT YOUR N ADDITIONAL JETS (ex: p p -> t t j j j gives maxjets = 3)
-    maxjets = 2
-    if process == 'BBB' or process == 'LLB' or process == 'ttB': maxjets = 1
-    if process == 'Bj' or process == 'Bjj-vbf' or process == 'H' or process =='tj': maxjets = 3
+    # Create the output folders
+    os.system('eos root://'+url+'/ mkdir -p '+outputDir+relPath+'_'+pileup)
+    os.system('eos root://'+url+'/ mkdir -p '+outputDir+relPath+'_'+pileup)
+    condor_dir='%s/%s/%s_%s'%(runDir,condorDir,relPath,pileup)
+    os.system('mkdir -p {}'.format(condor_dir))
 
-    qcut = xqcut*1.75 #guidance is between 1.5 and 2. Previously sliding scale 1.5 to 1.75, now use 1.75.
 
-    print 'Process '+process+', using xqcut '+str(xqcut)+' and max jets '+str(maxjets)
+    os.chdir(condor_dir)
+    print condor_dir, relPath
 
-    lhefiles = EOSlist_lhe_files(inputDir+sample)
-    if count+len(lhefiles) > 4000: 
-        print 'SKIPPING '+sample+', more than 4K jobs'  # OPTIONAL TO SUBMIT IN CHUNKS. LPC queues can run 2k.
-        continue
-
-    tempcount = 0;
-    for file in lhefiles:
-        rawfile = file[:-7]
-
-        count+=1
-        tempcount+=1
-        if tempcount > 1: continue   # OPTIONAL: RUN A 1 JOB TEST
-
-        dict={'RUNDIR':runDir, 'RELPATH':relPath, 'PILEUP':pileup, 'QCUT':str(qcut), 'JETS':str(maxjets), 'INPUTDIR':inDir, 'FILENAME':rawfile, 'PROXY':proxyPath, 'OUTPUTDIR':outDir}
-        jdfName=condorDir+'/%(RELPATH)s_%(PILEUP)s/%(FILENAME)s.jdl'%dict
-        print jdfName
-        jdf=open(jdfName,'w')
-        jdf.write(
-            """x509userproxy = %(PROXY)s
+    cmdfile="""# here goes your shell script
+use_x509userproxy = true
 universe = vanilla
-Executable = %(RUNDIR)s/LHEtoDelphes.sh
+Executable = {}/GENtoDelphes.sh
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
-Output = %(FILENAME)s.out
-Error = %(FILENAME)s.err
-Log = %(FILENAME)s.log
-Requirements = (TARGET.TotalCpus == 8)
+output  = condor.$(ClusterId).$(ProcId).out
+error   = condor.$(ClusterId).$(ProcId).err
+log     = condor.$(ClusterId).log
 Notification = Never
-Arguments = %(INPUTDIR)s/%(RELPATH)s %(OUTPUTDIR)s/%(RELPATH)s_%(PILEUP)s %(FILENAME)s.lhe %(QCUT)s %(JETS)s %(PILEUP)s
+""".format(runDir)
 
-Queue 1"""%dict)
-        jdf.close()
-        os.chdir('%s/%s_%s'%(condorDir,relPath,pileup))
-        os.system('condor_submit %(FILENAME)s.jdl'%dict)
-        os.system('sleep 0.5')                                
-        os.chdir('%s'%(runDir))
-        print count, "jobs submitted!!!"
+    if site == 'CERN':
+        cmdfile += 'x509userproxy = '+proxyPath+'\n'
+        cmdfile += '+JobFlavour = "tomorrow"\n'
+
+    tempcount = 0;
+    for ifile, file in enumerate(rootfiles):
+        infile = file
+
+        #print infile
+        tempcount+=1
+        if tempcount > 2: continue   # OPTIONAL to submit a test job
+
+        fname_bare = rootfiles_bare[ifile]
+        #print fname_bare
+
+        n_jobs = 1
+        if maxEvtsPerJob > -1: ## just query DAS if necessary
+            command = '/cvmfs/cms.cern.ch/common/dasgoclient --query="file='+fname_bare+' | grep file.nevents" '
+            proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
+            (out, err) = proc.communicate()
+            try: nevents = int(out.split('\n')[0])
+            except:
+                try: nevents = int(out.split('\n')[1])
+                except: print 'ERROR: couldnt isolate the number of events'
+
+            n_jobs = int(nevents) / int(maxEvtsPerJob)
+            if int(nevents) % int(maxEvtsPerJob) > 0:
+                n_jobs += 1 ## and extra one to account for the remainder
+
+        ### split based on the number of events
+        for i_split in range(n_jobs):
+
+            outfile = relPath+'_'+str(tempcount)+'_'+str(i_split)
+            ntuplefile = relPath+'_ntuple_'+str(tempcount)+'_'+str(i_split)
+            dict={'RUNDIR':runDir, 'RELPATH':relPath, 'FILEIN':infile, 'FILEOUT':outfile, 'OUTPUTDIR':outputDir, 'NTUPLEDIR':ntupleDir, 
+                  'NTUPLEOUT':ntuplefile, 'CARD':card, 'URL': url, 'PROXY':proxyPath}
+
+            if maxEvtsPerJob > -1:
+                maxEvents = int(maxEvtsPerJob)
+                skipEvents = int(maxEvtsPerJob*i_split)
+                if i_split == n_jobs-1:
+                   maxEvents = nevents - maxEvtsPerJob*(n_jobs-1) ## up to the last event
+
+                dict={'RUNDIR':runDir, 'RELPATH':relPath, 'FILEIN':infile, 'FILEOUT':outfile, 'OUTPUTDIR':outputDir, 'NTUPLEDIR':ntupleDir, 
+                      'NTUPLEOUT':ntuplefile, 'CARD':card, 'URL': url, 'PROXY':proxyPath, 'SKIPEVENTS':str(skipEvents), 'MAXEVENTS':str(maxEvents)}
+
+            delphesfile = '{}/{}_{}/{}.root'.format(outputDir, relPath, pileup, outfile)
+            #flatfile = '{}/{}_{}/{}.root'.format(ntupleDir, relPath, pileup, ntuplefile) # Later, could check for missing flat tree and run different resubmission
+
+            if not EOSpathExists(delphesfile,url):
+                count+=1
+                print 'did not find: ', outfile, '  --> (re-)submitting ... '
+           
+                argstr="Arguments = %(CARD)s %(FILEIN)s %(OUTPUTDIR)s/%(RELPATH)s_200PU %(FILEOUT)s.root %(NTUPLEOUT)s.root %(NTUPLEDIR)s/%(RELPATH)s_200PU 200PU %(URL)s"%dict
+                if maxEvtsPerJob > -1: argstr +=" %(MAXEVENTS)s %(SKIPEVENTS)s"%dict
+                argstr+="\n"
+                cmdfile += argstr
+                cmdfile += 'queue\n'
+
+
+    with open('condor_delphes.sub' , "w") as f:
+        f.write(cmdfile)
+
+    # submitting jobs
+    print 'submitting {} jobs ... '.format(relPath)
+    os.system('condor_submit condor_delphes.sub')
+
+    ## go back to run dir 
+    os.chdir('%s'%(runDir))
 
 print("--- %s minutes ---" % (round(time.time() - start_time, 2)/60))
+
