@@ -38,7 +38,7 @@ else:
 
 condorDir='condor_logs'
 
-maxEvtsPerJob = 5000 # -1 --> do not make splitting (1 job per file)
+maxEvtsPerJob = 25000 # -1 --> do not make splitting (1 job per file)
 
 ## Proxy settings differ between CERN and Fermilab...
 print 'Getting proxy'
@@ -89,7 +89,7 @@ Executable = {}/GENtoDelphes.sh
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
 output  = condor.$(ClusterId).$(ProcId).out
-error   = condor.$(ClusterId).$(ProcId).err
+error   = /dev/null
 log     = condor.$(ClusterId).log
 Notification = Never
 """.format(runDir)

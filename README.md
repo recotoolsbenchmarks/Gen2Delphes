@@ -23,6 +23,8 @@ python -u submitCondor.py FNAL <CERN,FNAL> > submit.log 2>&1 &  ## last argument
 tail -f submit.log ## watch and see
 ```
 
+**Note:** in Github this script is configured to submit a test of 2 jobs. Comment out the test job line to run for real.
+
 **How do I choose whether to use CERN or FNAL as an argument?** You need to know/decide where the output files should be stored. Typically for Snowmass2021 this argument should be `FNAL`. If you wish to send some samples to CERN and others to FNAL, edit `listFiles.py` to only contain samples destined for the same storage site. Run the submitter once for `FNAL` and once for `CERN`. **Leave the first argument as FNAL** so that settings are correct for FNAL condor.
 
 ## Installation and running on CERN lxplus:
@@ -42,11 +44,17 @@ python -u submitCondor.py CERN <CERN,FNAL> > submit.log 2>&1 &  ## last argument
 
 tail -f submit.log ## watch and see
 ```
+**Note:** in Github this script is configured to submit a test of 2 jobs. Comment out the test job line to run for real.
+
 **How do I choose whether to use CERN or FNAL as an argument?** You need to know/decide where the output files should be stored. Typically for Snowmass2021 this argument should be `FNAL`. If you wish to send some samples to CERN and others to FNAL, edit `listFiles.py` to only contain samples destined for the same storage site. Run the submitter once for `FNAL` and once for `CERN`. **Leave the first argument as CERN** so that settings are correct for CERN condor.
 
 ## Resubmitting jobs
 
-The submitter is set up to check the storage site for the expected Delphes ROOT file. If this file isn't found, the job will be submitted. You can therefore resubmit jobs by simply running the submitter a second time. Currently there is no printout of **why** a job has failed, but this information should be available in either the .out or .job log files. The .err files have been suppressed due to large size. 
+The submitter is set up to check the storage site for the expected Delphes ROOT file. If this file isn't found, the job will be submitted. You can therefore resubmit jobs by simply running the submitter a second time. Currently there is no printout of **why** a job has failed, but this information might be available in either the .out or .job log files. The .err files have been suppressed due to large size. 
+
+**NOTE**: Resubmission is based entirely on the numerical file number, so: 
+ * *do not* change the number of events run per job when resubmitting. You can edit the condor settings (ex: by adding "requestMemory = XXXX" to request additional memory for the job.
+ * remove the EOS output folder and try again from scratch if so many jobs fail that you need to change the number of events setting.  
 
 ## To change the CMSSW or Delphes settings (ADVANCED)
 
