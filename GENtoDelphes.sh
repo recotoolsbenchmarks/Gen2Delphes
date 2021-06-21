@@ -64,13 +64,13 @@ fi
 
 tar -xf tarball.tar
 rm -f tarball.tar 
-cd DelphesNtuplizer/
+cd DelphesNtuplizer/CMSSW_10_0_5
 
 # Create CMSSW
-scram project CMSSW_10_0_5
-cd CMSSW_10_0_5/src
+#scram project CMSSW_10_0_5
+#cd 
 eval `scram runtime -sh`
-cd -
+cd ../
 
 # Copy in the MinBias file
 xrdcp -f root://cmseos.fnal.gov//store/user/snowmass/DelphesSubmissionLPCcondor/MinBias_100k.pileup delphes/
@@ -135,10 +135,11 @@ echo
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Run DelphesNtuplizer
 
-echo "Running Delphes Ntuplizer on $FILEOUT"
+echo "Running Delphes Ntuplizer on $FILEOUT to produce $NTUPLE"
 
-cd ../
-python bin/Ntuplizer.py -i delphes/$FILEOUT -o $NTUPLE
+#cd ../
+#python bin/Ntuplizer.py -i delphes/$FILEOUT -o $NTUPLE
+python ../bin/Ntuplizer.py -i $FILEOUT -o $NTUPLE
 
 NtupleTime=`date +%s`
 
@@ -150,7 +151,8 @@ echo
 
 echo "xrdcp -f ${FILEOUT} root://${URL}/${OUTPUT}/${FILEOUT}"
 
-xrdcp -f delphes/${FILEOUT} root://${URL}/${OUTPUT}/${FILEOUT} 2>&1  ## FNAL
+#xrdcp -f delphes/${FILEOUT} root://${URL}/${OUTPUT}/${FILEOUT} 2>&1  ## FNAL
+xrdcp -f ${FILEOUT} root://${URL}/${OUTPUT}/${FILEOUT} 2>&1  ## FNAL
 XRDEXIT=$?
 if [[ $XRDEXIT -ne 0 ]]; then
     echo "exit code $XRDEXIT, failure in xrdcp of Delphes ROOT file"
