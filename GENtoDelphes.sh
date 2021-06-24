@@ -24,7 +24,8 @@ SKIPEVT=${10}
 echo "Starting job on " `date`
 echo "Running on " `uname -a`
 echo "System release " `cat /etc/redhat-release`
-
+echo
+echo "-------------- ARGUMENTS ------------"
 echo "Card name: ${CARD}"
 echo "Input file: ${FILEIN}"
 echo "Delphes output path: ${OUTPUT}"
@@ -43,15 +44,14 @@ fi
 
 echo "MaxEvents: ${MAXEVT}"
 echo "SkipEvents: ${SKIPEVT}"
+echo "----------------------------------------"
+echo 
 
 # Set variables
-#detCard=CMS_PhaseII_200PU_Snowmass2021_v0.tcl
 energy=14
 DelphesVersion=tags/3.5.0
-nPU=`echo $CARD | cut -d '_' -f 2 | cut -d '.' -f 1`
-process=`echo $FILEIN | cut -d '_' -f 1-2`
-configuration=`echo $CARD | cut -d '_' -f 1-2`
-DelphesOutput=CMSP2_${nPU}_`echo $FILEIN`.root
+nPU=`echo $CARD | cut -d '_' -f 3 | cut -d '.' -f 1`
+process=`echo $OUTPUT | cut -d '/' -f -1 | cut -d '_Tune' -f 1`
 
 # Copy and unpack the tarball
 echo "xrdcp source tarball and pileup file"
@@ -66,9 +66,6 @@ tar -xf tarball.tar
 rm -f tarball.tar 
 cd DelphesNtuplizer/CMSSW_10_0_5
 
-# Create CMSSW
-#scram project CMSSW_10_0_5
-#cd 
 eval `scram runtime -sh`
 cd ../
 
@@ -84,18 +81,22 @@ setupTime=`date +%s`
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #run MiniAOD through Delphes
-# Delphes is already compiled in the tarball
 
-echo "Running delphes with DelphesNtuplizer/cards/$CARD"
-
-## THESE AREN'T ACTUALLY DOING ANYTHING RIGHT NOW IN THE CARD
+echo "Prepping card"
 sed -i "s|MAXEVENTS|${MAXEVT}|g" cards/$CARD
 sed -i "s|SKIPEVENTS|${SKIPEVT}|g" cards/$CARD
 
 grep 'MaxEvents' cards/$CARD
 grep 'SkipEvents' cards/$CARD
 
+echo "Compiling delphes, will take a few minutes..."
 cd delphes/
+make >& /dev/null
+
+compileTime=`date +%s`
+
+echo "Running delphes with DelphesNtuplizer/cards/$CARD"
+
 ./DelphesCMSFWLite ../cards/$CARD ${FILEOUT} ${FILEIN}
 DELPHESEXIT=$?
 if [[ $DELPHESEXIT -ne 0 ]]; then
@@ -106,15 +107,24 @@ fi
 DelphesTime=`date +%s`
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Run DelphesNtuplizer
+
+echo "Running Delphes Ntuplizer on $FILEOUT to produce $NTUPLE"
+
+python ../bin/Ntuplizer.py -i $FILEOUT -o $NTUPLE
+
+NtupleTime=`date +%s`
+
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #metadata
 
+echo "--------------- METADATA ---------------"
 echo "User: " `eval whoami`
 echo "Date: " `date` 
 echo 
 
 echo "Process: " $process 
 echo "Pileup Conditions: " $nPU 
-echo "Configuration: " $configuration 
 echo "Energy: " $energy 
 echo 
 
@@ -129,21 +139,10 @@ echo "Detector Card: " $CARD
 echo 
 
 echo "Minutes spent setting up job: " `expr $setupTime / 60 - $startTime / 60` 
-echo "Minutes spent running Delphes: " `expr $DelphesTime / 60 - $setupTime / 60` 
-echo 
-
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Run DelphesNtuplizer
-
-echo "Running Delphes Ntuplizer on $FILEOUT to produce $NTUPLE"
-
-#cd ../
-#python bin/Ntuplizer.py -i delphes/$FILEOUT -o $NTUPLE
-python ../bin/Ntuplizer.py -i $FILEOUT -o $NTUPLE
-
-NtupleTime=`date +%s`
-
-echo "Time spent running Ntuplizer (s): " `expr $NtupleTime - $DelphesTime`
+echo "Minutes spent compiling Delphes: " `expr $compileTime / 60 - $setupTime / 60` 
+echo "Minutes spent running Delphes: " `expr $DelphesTime / 60 - $compileTime / 60` 
+echo "Minutes spent running Ntuplizer: " `expr $NtupleTime / 60 - $DelphesTime / 60`
+echo "---------------------------------------------------"
 echo 
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -151,7 +150,6 @@ echo
 
 echo "xrdcp -f ${FILEOUT} root://${URL}/${OUTPUT}/${FILEOUT}"
 
-#xrdcp -f delphes/${FILEOUT} root://${URL}/${OUTPUT}/${FILEOUT} 2>&1  ## FNAL
 xrdcp -f ${FILEOUT} root://${URL}/${OUTPUT}/${FILEOUT} 2>&1  ## FNAL
 XRDEXIT=$?
 if [[ $XRDEXIT -ne 0 ]]; then
