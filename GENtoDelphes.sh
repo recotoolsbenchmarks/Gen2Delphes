@@ -51,7 +51,7 @@ echo
 energy=14
 DelphesVersion=tags/3.5.0
 nPU=`echo $CARD | cut -d '_' -f 3 | cut -d '.' -f 1`
-process=`echo $OUTPUT | cut -d '/' -f -1 | cut -d '_Tune' -f 1`
+process=`echo $OUTPUT | cut -d '/' -f -1 | cut -d '_' -f 1-3`
 
 # Copy and unpack the tarball
 echo "xrdcp source tarball and pileup file"
