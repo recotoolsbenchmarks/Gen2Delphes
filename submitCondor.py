@@ -2,7 +2,7 @@
 #
 # Submission script for Snowmass 2021 Delphes samples
 #
-# ASSUMPTIONS: you are running on LXPLUS CONDOR
+# ASSUMPTIONS: you are running on LXPLUS or CMSLPC CONDOR
 #
 # ARGUMENTS: choose whether you are sending files to 
 #            CERN EOS or to FNAL EOS
@@ -47,12 +47,12 @@ card = 'CMS_PhaseII_200PU_Snowmass2021_v0.tcl'
 
 if store == 'CERN':
     url = 'eoscms.cern.ch'
-    outputDir='/store/group/upgrade/RTB/Snowmass2021_test/Delphes/'
-    ntupleDir='/store/group/upgrade/RTB/Snowmass2021_test/DelphesNtuplizer/'     
+    outputDir='/store/group/upgrade/Snowmass2021/Delphes/'
+    ntupleDir='/store/group/upgrade/Snowmass2021/DelphesNtuplizer/'     
 else:
     url = 'cmseos.fnal.gov'
-    outputDir='/store/user/snowmass/Snowmass2021_test/Delphes/'
-    ntupleDir='/store/user/snowmass/Snowmass2021_test/DelphesNtuplizer/'
+    outputDir='/store/user/snowmass/Snowmass2021/Delphes/'
+    ntupleDir='/store/user/snowmass/Snowmass2021/DelphesNtuplizer/'
 
 condorDir='condor_logs'
 
