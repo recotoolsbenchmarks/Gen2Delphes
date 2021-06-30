@@ -20,6 +20,7 @@ PILEUP=$7
 URL=$8
 MAXEVT=$9
 SKIPEVT=${10}
+DOTUPLES=${11}
 
 echo "Starting job on " `date`
 echo "Running on " `uname -a`
@@ -44,6 +45,7 @@ fi
 
 echo "MaxEvents: ${MAXEVT}"
 echo "SkipEvents: ${SKIPEVT}"
+echo "Run ntuples? ${DOTUPLES}"
 echo "----------------------------------------"
 echo 
 
@@ -109,10 +111,10 @@ DelphesTime=`date +%s`
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Run DelphesNtuplizer
 
-echo "Running Delphes Ntuplizer on $FILEOUT to produce $NTUPLE"
-
-python ../bin/Ntuplizer.py -i $FILEOUT -o $NTUPLE
-
+if [[ $DOTUPLES == 1 ]] ; then
+    echo "Running Delphes Ntuplizer on $FILEOUT to produce $NTUPLE"
+    python ../bin/Ntuplizer.py -i $FILEOUT -o $NTUPLE
+fi
 NtupleTime=`date +%s`
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
