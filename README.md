@@ -14,7 +14,7 @@ These scripts facilitate submitting HTCondor jobs that process a defined set of 
    * do ntuples? True (default) or False, choose whether to run DelphesNtuplizer
    * do a test? True or False (default), choose if this should be a short test
  * `GENtoDelphes.sh` is the condor executable to run Delphes and the Ntuplizer
- * listFiles.py contains the dataset names to run. 
+ * `listFiles.py` contains the dataset names to run. 
    * If you are a central submitter then you have a list with your name on it that should be uncommented. 
    * Scroll past the lists to the for loop to make sure it's looping over the list you want!
 
