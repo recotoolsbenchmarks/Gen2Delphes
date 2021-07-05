@@ -15,8 +15,9 @@ These scripts facilitate submitting HTCondor jobs that process a defined set of 
    * do a test? True or False (default), choose if this should be a short test
  * `GENtoDelphes.sh` is the condor executable to run Delphes and the Ntuplizer
  * `listFiles.py` contains the dataset names to run. 
-   * If you are a central submitter then you have a list with your name on it that should be uncommented. 
+   * If you are a central submitter then you have a list with your name on it -- uncomment whichever lines you want to submit.
    * Scroll past the lists to the for loop to make sure it's looping over the list you want!
+   * **Keep extensions grouped**: if a sample has extensions (`_ext1` or similar, same physics process name) keep all the extensions commented or uncommented together in the list when you submit or resubmit!
 
 
 ## Installation and running on FNAL cmslpc
@@ -29,7 +30,7 @@ git clone -b snowmass2021 https://github.com/recotoolsbenchmarks/Gen2Delphes.git
 cd Gen2Delphes
 
 voms-proxy-init -voms cms -valid 168:00
-vi/emacs/nano listFiles.py ## EDIT ME TO SHOW YOUR SAMPLES
+vi/emacs/nano listFiles.py ## EDIT ME TO SHOW YOUR SAMPLES (see above notes on important scripts)
 
 python -u submitCondor.py FNAL <CERN,FNAL> > submit.log 2>&1 &  ## last argument is the storage site
 
@@ -51,7 +52,7 @@ cd Gen2Delphes
 
 source environment.(c)sh
 voms-proxy-init -voms cms -valid 168:00
-vi/emacs/nano listFiles.py ## EDIT ME TO SHOW YOUR SAMPLES
+vi/emacs/nano listFiles.py ## EDIT ME TO SHOW YOUR SAMPLES (see above notes on important scripts)
 
 python -u submitCondor.py CERN <CERN,FNAL> > submit.log 2>&1 &  ## last argument is the storage site
 
@@ -67,8 +68,9 @@ tail -f submit.log ## watch and see
 The submitter is set up to check the storage site for the expected Delphes ROOT file. If this file isn't found, the job will be submitted. You can therefore resubmit jobs by simply running the submitter a second time. Currently there is no printout of **why** a job has failed, but this information might be available in either the .out or .job log files. The .err files have been suppressed due to large size. 
 
 **NOTE**: Resubmission is based entirely on the numerical file number, so: 
- * **do not** change the number of events run per job when resubmitting. 
- * remove the EOS output folder and try again from scratch if so many jobs fail that you need to change the number of events setting.  
+ * **Do not** change the number of events run per job when resubmitting. 
+ * **Wait** until all your condor jobs are finished running (held is ok, kill those) before resubmitting.
+ * **Remove** the EOS output folder and try again from scratch if so many jobs fail that you need to change the number of events setting.  
 
 **If your jobs are held/crashed for going over memory:** Edit submitCondor,py to set the `morememory` flag to True before resubmitting. This will increase the request by 1 GB, you can edit the script to request more if needed but note that this will adversely affect condor priority!
 
