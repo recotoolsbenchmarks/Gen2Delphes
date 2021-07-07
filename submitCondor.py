@@ -10,8 +10,9 @@
 #    "store": <CERN, FNAL> this is the site for file storage
 #    "doNtuples": True/False to process DelphesNtuplizer after delphes (optional, default True)
 #    "testjob": True/False to run a 2-job test (optional, default False)
+#    "submit": True/False to turn on/off submittion (optional, default True)
 #
-# RUN ME: python -u submitCondor_gen.py <CERN,FNAL> <CERN,FNAL> <True/False> <True/False> >& submit.log &
+# RUN ME: python -u submitCondor_gen.py <CERN,FNAL> <CERN,FNAL> >& submit.log &
 #
 # ********************************************************************************************************
 
@@ -31,6 +32,9 @@ if len(sys.argv) > 3:
 testjob = False
 if len(sys.argv) > 4:
     testjob = bool(eval(sys.argv[4]))
+submit = True
+if len(sys.argv) > 5:
+    submit = bool(eval(sys.argv[5]))
 
 # Manual flag to add more memory to the condor job
 morememory = False
@@ -212,7 +216,7 @@ Notification = Never
         print '\tFound totaljobs =',totaljobs,'and submiting',tempcount
         print '\tSample is',round(100.0*(totaljobs-tempcount)/float(totaljobs),2),'% complete'
     print '\tsubmitting {} jobs ... '.format(relPath)
-    os.system('condor_submit condor_delphes.sub')
+    if submit: os.system('condor_submit condor_delphes.sub')
 
     os.chdir('%s'%(runDir))
 
