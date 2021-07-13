@@ -6,6 +6,8 @@ These scripts facilitate submitting HTCondor jobs that process a defined set of 
  * Current Delphes tag = 3.5.0
  * Current Delphes card **from DelphesNtuplizer** = CMS_Phase2_200PU_Snowmass2021_v0.tcl
 
+## Production Spreadsheet! [Google Sheets](https://docs.google.com/spreadsheets/d/1BMxoGrp8FSIEvVfwvam0_Ae-chTedkaejfaA52epXQA/edit?usp=sharing)
+
 ## Overview of the important scripts
 
  * `submitCondor.py` is the main submitter that you will run. Arguments:
