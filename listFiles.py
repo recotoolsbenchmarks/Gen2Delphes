@@ -504,10 +504,10 @@ for sample in samplelist_test:
 
     # print file list to a .txt                                                                              
     if '_ext' not in sample:
-       #os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" > fileLists/'+sample.split('/')[1]+'_200PU.txt')
+       os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" > fileLists/'+sample.split('/')[1]+'_200PU.txt')
        fileList.append('fileLists/'+sample.split('/')[1]+'_200PU.txt')
-    #else:
-       #os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" >> fileLists/'+sample.split('/')[1]+'_200PU.txt')
+    else:
+       os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" >> fileLists/'+sample.split('/')[1]+'_200PU.txt')
 
     # ----------------------------------------------------------------
     # Theses are utilities that are helpful in case of need...
