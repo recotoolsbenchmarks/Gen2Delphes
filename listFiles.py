@@ -497,7 +497,7 @@ if not os.path.exists(os.getcwd()+'/fileLists'): os.system('mkdir fileLists')
 fileList=[]
     
 # CHOOSE WHICH LIST TO RUN OVER HERE!
-for sample in samplelist_julie:
+for sample in samplelist_test:
 
     print '------------------------------------------'
     print 'Listing',sample
