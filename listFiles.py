@@ -12,86 +12,71 @@ import os,sys
 
 # Put things here in order to run a small test (or just comment things out in a longer list!)
 samplelist_test = [
-    
 ]
 
 samplelist_julie = [
+    # new Aug 19
+    '/TprimeTprime_M-1000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/TprimeTprime_M-1500_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/TprimeTprime_M-2000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/TprimeTprime_M-2500_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/TprimeTprime_M-3000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2B2Tau_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    '/VBFHHTo2B2Tau_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    '/VBFHHTo2B2Tau_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
 
-    '/GluGluToHHTo4B_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN', # 10000
-    '/GJet_Pt-20to40_DoubleEMEnriched_MGG-80toInf_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN', # 20000
-    '/GluGluToHHTo4B_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/TT4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/TTZHTo4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/TTZToLLNuNu_M-10_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/TTZZTo4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/VBFHHTo4B_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/VBFHHTo4B_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
-    '/THW_ctcvcp_HToGG_M125_TuneCUETP8M1_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/GluGluHToGG_M125_14TeV_amcatnloFXFX_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
-    '/VBFHToGG_M125_14TeV_amcatnlo_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
-    '/VHToGG_M125_14TeV_amcatnloFXFX_madspin_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v3/GEN',
-    '/ttHJetToGG_M125_14TeV_amcatnloFXFX_madspin_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/ggZH_HToGG_ZToQQ_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
-    '/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v3/GEN',
+    ## do with 5100
+    #'/GJet_Pt-20to40_DoubleEMEnriched_MGG-80toInf_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN', # 20000
+    #'/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    #'/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v3/GEN',
+
+    ## do with 4100
+    #'/TT4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/TTZHTo4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/TTZToLLNuNu_M-10_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/TTZZTo4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/VBFHHTo4B_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+
+    ## do with 2100
+    #'/VBFHHTo4B_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/VBFHHTo2B2Tau_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    #'/VBFHHTo4B_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+
+    ## delete and restart with 5000 events, 2100
+    #'/GluGluToHHTo4B_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/GluGluToHHTo4B_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/GluGluToHHTo4B_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
 
     # done
     #'/SMS-TStauStau_mStau-100_mLSP-1_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     #'/GluGluToHHTo2B2Tau_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/TTZJetsToQQ_Dilept_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/TTHHTo4b_5f_LO_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-
-    # WAIT until later, not on disk yet!
+    #'/ggZH_HToGG_ZToQQ_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     #'/GluGluToHHTo4B_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/GluGluToHHTo4B_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/VBFHHTo2B2Tau_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
     #'/VBFHHTo4B_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/VBFHHTo4B_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/VBFHHTo4B_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/VBFHHTo4B_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/VBFHHTo4B_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/VBFHHTo4B_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+
+    # WAIT until later, not on disk yet!
     #'/THQ_ctcvcp_HToGG_M125_TuneCUETP8M1_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN', # TAPE
 
 ]
 
-samplelist_sid = [
+samplelist_sid = [ # Not working anymore, Julie will follow up
     '/DY0Jets_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     '/DY1Jets_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DY2Jets_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DY3Jets_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-100_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-10to50_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-4to10_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
 ]
 
-samplelist_julian = [
+samplelist_julian = [ # Working again Sept? 
     '/DYJetsToLL_0J_M-10to50_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/DYJetsToLL_1J_M-10to50_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     '/DYJetsToLL_2J_M-10to50_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
     '/DYJetsToLL_3J_M-10to50_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
-    '/DYJetsToQQ_HT180toInf_14TeV-madgraphMLM-pythia8_GenPt_250GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
-    '/DYJetsToQQ_HT180toInf_14TeV-madgraphMLM-pythia8_GenPt_500GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
-    '/DYJetsToTauTau_M-50_GenMET-100_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
-    '/DYJets_incl_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYToLL-M-50_0J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/DYToLL-M-50_1J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/DYToLL-M-50_2J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/DYToLL-M-50_3J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/TTZToLLNuNu_M-10_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-
-    # WAIT until later, not on disk yet!
-    #'/QCD_Pt-15to7000_MuEnrichedPt5_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    #'/QCD_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/QCDBBar_Pt-15to7000_MuEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/QCDCCbar_Pt-15to7000_MuEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
 ]
 
 samplelist_soumya = [
@@ -129,6 +114,29 @@ samplelist_soumya = [
     ]
 
 samplelist_Wenyu = [
+    # new Aug 19
+    '/GJets_SM_5f_withDipoleRecoil_TuneCP5_QCDInterference_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2Qlnu_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2Qlnu_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2Qlnu_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2Qlnu_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2Tau_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v3/GEN',
+    '/GluGluToHHTo2G2Tau_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v3/GEN',
+    '/GluGluToHHTo2G2Tau_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2Tau_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v3/GEN',
+    '/GluGluToHHTo2G2Z_Inc_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2Z_Inc_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2l2nu_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2l2nu_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2l2nu_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G4Q_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G4Q_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G4Q_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G4Q_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/THQ_ctcvcp_HToGG_M125_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/TTHHTo4b_5f_LO_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/TTZJetsToQQ_Dilept_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+
     '/QCD_HT1000to1500_BGenFilter_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/QCD_HT100to200_BGenFilter_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
     '/QCD_HT1500to2000_BGenFilter_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
@@ -153,7 +161,7 @@ samplelist_Wenyu = [
 
 ]
 
-samplelist_jack = [
+samplelist_jack = [ # working again in Sept?
     '/GluGluHToBB_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/GluGluHToGG_M70_14TeV_amcatnloFXFX_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     '/GluGluHToMuMu_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
@@ -173,6 +181,17 @@ samplelist_jack = [
     ]
 
 samplelist_Emmanuele = [
+    # New Aug 19
+    '/DYJetsToQQ_HT180toInf_14TeV-madgraphMLM-pythia8_GenPt_250GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
+    '/DYJetsToQQ_HT180toInf_14TeV-madgraphMLM-pythia8_GenPt_500GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
+    '/DYJetsToTauTau_M-50_GenMET-100_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
+    '/DYJets_incl_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYToLL-M-50_0J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/DYToLL-M-50_1J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/DYToLL-M-50_2J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/DYToLL-M-50_3J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/TTZToLLNuNu_M-10_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+
     '/ST_s-channel_4f_InclusiveDecays_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
     '/ST_s-channel_4f_InclusiveDecays_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
     '/ST_s-channel_4f_leptonic_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
@@ -195,10 +214,18 @@ samplelist_Emmanuele = [
     #'/ST_tW_antitop_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v3/GEN',
     #'/ST_tch_14TeV_antitop_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
     #'/ST_tch_14TeV_antitop_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v1/GEN',
+    #'/QCD_Pt-15to7000_MuEnrichedPt5_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    #'/QCD_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    #'/QCDBBar_Pt-15to7000_MuEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    #'/QCDCCbar_Pt-15to7000_MuEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
 
     ]
 
 samplelist_Sandhya = [
+    # New Aug 19
+    '/GJet_Pt-20to40_DoubleEMEnriched_MGG-80toInf_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluHToMuMu_M125_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-BSzpz35_110X_mcRun4_realistic_v3-v2/GEN',
+
     '/THQ_Hincl_14TeV-TuneCUETP8M1-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/THW_Hincl_14TeV_TuneCUETP8M1-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     '/TTHH_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
@@ -231,6 +258,42 @@ samplelist_Sandhya = [
     ]
 
 samplelist_Oguz = [
+    # New July 28
+    '/GluGluHToGG_M120_TuneCP5_14TeV-amcatnloFXFX-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluHToGG_M123_TuneCP5_14TeV-amcatnloFXFX-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluHToGG_M124_TuneCP5_14TeV-amcatnloFXFX-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluHToGG_M125_TuneCP5_14TeV-amcatnloFXFX-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluHToGG_M125_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-BSzpz35_110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluHToGG_M126_TuneCP5_14TeV-amcatnloFXFX-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluHToGG_M127_TuneCP5_14TeV-amcatnloFXFX-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluHToGG_M130_TuneCP5_14TeV-amcatnloFXFX-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Qlnu_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Qlnu_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Qlnu_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Qlnu_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Qlnu_CV_1_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Qlnu_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Qlnu_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2l2nu_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2l2nu_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2l2nu_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2l2nu_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2l2nu_CV_1_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2l2nu_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2l2nu_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G4Q_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G4Q_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G4Q_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G4Q_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G4Q_CV_1_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G4Q_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G4Q_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHToGG_M120_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHToGG_M130_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/ttHJetToGG_M120_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/ttHJetToGG_M125_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/ttHJetToGG_M130_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',    
+
     '/TT_Mtt1000toInf_TuneCUETP8M1_14TeV-powheg-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/TT_TuneCUETP8M2T4_14TeV-powheg-pythia8-GenJetPt-350GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/TT_TuneCUETP8M2T4_14TeV-powheg-pythia8-GenJetPt-950GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
@@ -253,6 +316,22 @@ samplelist_Oguz = [
     ]
 
 samplelist_Michele = [
+    # New Aug 19
+    '/GluGluToHHTo2B2G_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2B2G_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2B2G_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v3/GEN',
+    '/GluGluToHHTo2B2G_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2B2Tau_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    '/GluGluToHHTo2B2Tau_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    '/GluGluToHHTo2B2Tau_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v6/GEN',
+    '/VBFHHTo2B2G_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2B2G_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2B2G_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2B2G_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2B2G_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2B2G_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2B2G_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+
     '/VBFHHTo2B2G_CV_1_C2V_1_C3_1_14TeV-madgraph/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
     '/VBFHHTo4B_CV_1_C2V_1_C3_1_14TeV-madgraph/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
     '/VBFHHToHHTo2B2VTo2L2Nu_CV_1_C2V_1_C3_1_14TeV-madgraph/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
@@ -272,7 +351,45 @@ samplelist_Michele = [
     '/VVTo2L2Nu_14TeV_amcatnloFXFX_madspin_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     ]
 
+samplelist_Nan = [
+    # New Aug 19
+    '/VBFHHTo2G2Tau_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Tau_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Tau_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Tau_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Tau_CV_1_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Tau_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Tau_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Z_Inc_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Z_Inc_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Z_Inc_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Z_Inc_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Z_Inc_CV_1_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Z_Inc_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Z_Inc_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHToGG_M123_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHToGG_M124_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHToGG_M125_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHToGG_M126_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHToGG_M127_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VHToGG_M120_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VHToGG_M123_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VHToGG_M124_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VHToGG_M125_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VHToGG_M126_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VHToGG_M127_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VHToGG_M130_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+]
+
 samplelist_Gamze = [
+    # New Aug 19
+    '/WGGJets_TuneCP5_14TeV_madgraphMLM_pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/WGJJToLNu_EWK_QCD_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/ttHJetToGG_M123_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/ttHJetToGG_M124_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/ttHJetToGG_M126_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/ttHJetToGG_M127_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+
     '/WWG_TuneCUETP8M1_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
     '/WWJJTo2L2Nu2J_SS_QCD_TuneCUEP8M2T4_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/WWZTo4L2Nu_aQGC_TuneCUEP8M2T4_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v3/GEN',
@@ -300,6 +417,21 @@ samplelist_Gamze = [
 ]
 
 samplelist_sezen = [
+    # New Aug 19
+    '/DY2Jets_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DY3Jets_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-100_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-10to50_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-4to10_TuneCUEP8M2T4_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+
     '/ZH_HToBB_ZToLL_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/ZH_HToBB_ZToQQ_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
@@ -365,17 +497,17 @@ if not os.path.exists(os.getcwd()+'/fileLists'): os.system('mkdir fileLists')
 fileList=[]
     
 # CHOOSE WHICH LIST TO RUN OVER HERE!
-for sample in samplelist_test:
+for sample in samplelist_julie:
 
     print '------------------------------------------'
     print 'Listing',sample
 
     # print file list to a .txt                                                                              
     if '_ext' not in sample:
-       os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" > fileLists/'+sample.split('/')[1]+'_200PU.txt')
+       #os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" > fileLists/'+sample.split('/')[1]+'_200PU.txt')
        fileList.append('fileLists/'+sample.split('/')[1]+'_200PU.txt')
-    else:
-       os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" >> fileLists/'+sample.split('/')[1]+'_200PU.txt')
+    #else:
+       #os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" >> fileLists/'+sample.split('/')[1]+'_200PU.txt')
 
     # ----------------------------------------------------------------
     # Theses are utilities that are helpful in case of need...
@@ -710,4 +842,11 @@ samplelist_lowpriority = [
     '/SUSYGluGluToHToTauTau_M-2600_TuneCUETP8M1_14TeV-pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     '/SUSYGluGluToHToTauTau_M-2900_TuneCUETP8M1_14TeV-pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     '/SUSYGluGluToHToTauTau_M-3200_TuneCUETP8M1_14TeV-pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+
+    # to be updated in Snowmass2021 campaign
+    #'/THW_ctcvcp_HToGG_M125_TuneCUETP8M1_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    #'/GluGluHToGG_M125_14TeV_amcatnloFXFX_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
+    #'/VBFHToGG_M125_14TeV_amcatnlo_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
+    #'/VHToGG_M125_14TeV_amcatnloFXFX_madspin_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v3/GEN',
+    #'/ttHJetToGG_M125_14TeV_amcatnloFXFX_madspin_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
 ]
