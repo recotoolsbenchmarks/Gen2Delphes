@@ -15,21 +15,8 @@ samplelist_test = [
 ]
 
 samplelist_julie = [
-    # new Aug 19
-    '/TprimeTprime_M-1000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/TprimeTprime_M-1500_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/TprimeTprime_M-2000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/TprimeTprime_M-2500_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/TprimeTprime_M-3000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/VBFHHTo2B2Tau_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
-    '/VBFHHTo2B2Tau_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
-    '/VBFHHTo2B2Tau_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
-    '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
-    '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
-    '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
-
     ## do with 5100
-    #'/GJet_Pt-20to40_DoubleEMEnriched_MGG-80toInf_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN', # 20000
+    #'/GJet_Pt-20to40_DoubleEMEnriched_MGG-80toInf_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN', # 20000 events
     #'/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
     #'/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v3/GEN',
 
@@ -39,16 +26,28 @@ samplelist_julie = [
     #'/TTZToLLNuNu_M-10_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/TTZZTo4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/VBFHHTo4B_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-
+    
     ## do with 2100
-    #'/VBFHHTo4B_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/VBFHHTo2B2Tau_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
-    #'/VBFHHTo4B_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo4B_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/VBFHHTo4B_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN', # not fully rep 8/27
+    '/VBFHHTo2B2Tau_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
 
-    ## delete and restart with 5000 events, 2100
-    #'/GluGluToHHTo4B_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/GluGluToHHTo4B_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/GluGluToHHTo4B_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    ## do with 2100, 25000 events
+    # '/TprimeTprime_M-1000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    # '/TprimeTprime_M-1500_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    # '/TprimeTprime_M-2000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    # '/TprimeTprime_M-2500_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    # '/TprimeTprime_M-3000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    # '/VBFHHTo2B2Tau_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    # '/VBFHHTo2B2Tau_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    # '/VBFHHTo2B2Tau_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    # '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    # '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+    # '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+
+    ## do with 4100, 5000 events
+    # '/GluGluToHHTo4B_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    # '/GluGluToHHTo4B_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
 
     # done
     #'/SMS-TStauStau_mStau-100_mLSP-1_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
@@ -57,6 +56,7 @@ samplelist_julie = [
     #'/TTHHTo4b_5f_LO_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/ggZH_HToGG_ZToQQ_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     #'/GluGluToHHTo4B_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/GluGluToHHTo4B_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/VBFHHTo4B_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/VBFHHTo4B_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/VBFHHTo4B_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
@@ -497,17 +497,17 @@ if not os.path.exists(os.getcwd()+'/fileLists'): os.system('mkdir fileLists')
 fileList=[]
     
 # CHOOSE WHICH LIST TO RUN OVER HERE!
-for sample in samplelist_julie:
+for sample in samplelist_test:
 
     print '------------------------------------------'
     print 'Listing',sample
 
     # print file list to a .txt                                                                              
     if '_ext' not in sample:
-       #os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" > fileLists/'+sample.split('/')[1]+'_200PU.txt')
-       fileList.append('fileLists/'+sample.split('/')[1]+'_200PU.txt')
-    #else:
-       #os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" >> fileLists/'+sample.split('/')[1]+'_200PU.txt')
+        os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" > fileLists/'+sample.split('/')[1]+'_200PU.txt')
+        fileList.append('fileLists/'+sample.split('/')[1]+'_200PU.txt')
+    else:
+        os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" >> fileLists/'+sample.split('/')[1]+'_200PU.txt')
 
     # ----------------------------------------------------------------
     # Theses are utilities that are helpful in case of need...
