@@ -48,7 +48,7 @@ for sample in fileList:
         digits = out.find(' ')
         omem = int("".join(out[0:digits]))
         print '\t\tOver memory (killed) = ',omem,'/',jobs
-        
+
         command = 'grep "Job was held" '+thislog+' | wc'
         proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
         (out, err) = proc.communicate()
@@ -56,7 +56,15 @@ for sample in fileList:
         digits = out.find(' ')
         omemdocker = int("".join(out[0:digits]))
         print '\t\tOver memory (held) = ',omemdocker,'/',jobs,'(might not be unique from over memory killed!)'
-        
+
+        command = 'grep "more than 2 days" '+thislog+' | wc'
+        proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
+        (out, err) = proc.communicate()
+        out = out.strip()
+        digits = out.find(' ')
+        otime = int("".join(out[0:digits]))
+        print '\t\tOver walltime (killed) = ',otime,'/',jobs
+                
         command = 'grep "disk" '+thislog+' | wc'
         proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
         (out, err) = proc.communicate()
@@ -88,5 +96,5 @@ for sample in fileList:
         totaldone += done
         print '\t\tDONE = ',done,'/',jobs,'=',round(100*float(done)/float(jobs),2),'%, TOTAL DONE =',round(100*float(totaldone)/float(totaljobs),2),'%'
         
-        print '\t\tUnknown (running?) =',max(0,jobs-done-crash-odisk-omemdocker-omem),'/',jobs
+        print '\t\tUnknown (running?) =',max(0,jobs-done-crash-odisk-omemdocker-omem-otime),'/',jobs
 

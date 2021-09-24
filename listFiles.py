@@ -15,7 +15,29 @@ samplelist_test = [
 ]
 
 samplelist_julie = [
-    # new Aug 19
+    # New Sept 19
+    '/DarkPhotonToMuMu_M_0p5_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DarkPhotonToMuMu_M_0p9_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DarkPhotonToMuMu_M_2p0_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+
+    ## do with 5100
+    #'/GJet_Pt-20to40_DoubleEMEnriched_MGG-80toInf_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN', # 20000 events
+    #'/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    #'/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v3/GEN',
+
+    ## do with 4100
+    '/TT4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/TTZHTo4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/TTZToLLNuNu_M-10_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/TTZZTo4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo4B_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    
+    ## do with 2100
+    '/VBFHHTo4B_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/VBFHHTo4B_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN', # not fully rep 8/27
+    '/VBFHHTo2B2Tau_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
+
+    ## do with 2100, 25000 events
     '/TprimeTprime_M-1000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     '/TprimeTprime_M-1500_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     '/TprimeTprime_M-2000_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
@@ -28,27 +50,9 @@ samplelist_julie = [
     '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
     '/VBFHHTo2B2Tau_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
 
-    ## do with 5100
-    #'/GJet_Pt-20to40_DoubleEMEnriched_MGG-80toInf_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN', # 20000
-    #'/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    #'/TTTJ_TuneCUETP8M2_14TeV-madgraph-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v3/GEN',
-
-    ## do with 4100
-    #'/TT4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/TTZHTo4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/TTZToLLNuNu_M-10_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/TTZZTo4b_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/VBFHHTo4B_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-
-    ## do with 2100
-    #'/VBFHHTo4B_CV_1_C2V_0_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/VBFHHTo2B2Tau_CV_1_C2V_2_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
-    #'/VBFHHTo4B_CV_1_C2V_1_C3_1_withDipoleRecoil_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-
-    ## delete and restart with 5000 events, 2100
-    #'/GluGluToHHTo4B_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/GluGluToHHTo4B_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/GluGluToHHTo4B_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    ## do with 4100, 5000 events
+    '/GluGluToHHTo4B_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo4B_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
 
     # done
     #'/SMS-TStauStau_mStau-100_mLSP-1_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
@@ -57,6 +61,7 @@ samplelist_julie = [
     #'/TTHHTo4b_5f_LO_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/ggZH_HToGG_ZToQQ_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     #'/GluGluToHHTo4B_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    #'/GluGluToHHTo4B_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/VBFHHTo4B_CV_0_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/VBFHHTo4B_CV_1_5_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     #'/VBFHHTo4B_CV_1_C2V_1_C3_2_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
@@ -114,6 +119,11 @@ samplelist_soumya = [
     ]
 
 samplelist_Wenyu = [
+    # new Sep 01
+    '/GluGluToHHTo2G2Z_Inc_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2Z_Inc_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/GluGluToHHTo2G2l2nu_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    
     # new Aug 19
    # '/GJets_SM_5f_withDipoleRecoil_TuneCP5_QCDInterference_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
    # '/GluGluToHHTo2G2Qlnu_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
@@ -161,7 +171,35 @@ samplelist_Wenyu = [
 
 ]
 
-samplelist_jack = [ # working again in Sept?
+samplelist_jack = [ # working again in Sept
+    # New Sept 19
+    '/QCD_Pt-15to7000_MuEnrichedPt5_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/QCDBBar_Pt-15to7000_MuEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYJetsToQQ_HT180toInf_14TeV-madgraphMLM-pythia8_GenPt_250GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
+    '/DYJetsToQQ_HT180toInf_14TeV-madgraphMLM-pythia8_GenPt_500GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
+    '/DYJetsToTauTau_M-50_GenMET-100_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
+    '/DYJets_incl_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/DYToLL-M-50_0J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/DYToLL-M-50_1J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/DYToLL-M-50_2J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/DYToLL-M-50_3J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/TTZToLLNuNu_M-10_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/ST_tW_antitop_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN', # started this one already
+    '/ST_tW_antitop_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v3/GEN', # resubmit as pair w/ this one
+
+    # New Sept 8
+    '/ST_s-channel_4f_InclusiveDecays_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/ST_s-channel_4f_InclusiveDecays_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
+    '/ST_s-channel_4f_leptonic_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/ST_tW_antitop_5f_NoFullyHadronicDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN',
+    '/ST_tW_top_5f_NoFUllyHadronicDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN',
+    '/ST_tW_top_5f_NoFUllyHadronicDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
+    '/ST_tW_top_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN',
+    '/ST_tW_top_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
+    '/ST_tch_14TeV_antitop_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    '/ST_tch_14TeV_top_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v3/GEN',
+    '/ST_tch_14TeV_top_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v1/GEN',
+    
     '/GluGluHToBB_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/GluGluHToGG_M70_14TeV_amcatnloFXFX_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     '/GluGluHToMuMu_M125_14TeV_powheg_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
@@ -182,41 +220,17 @@ samplelist_jack = [ # working again in Sept?
 
 samplelist_Emmanuele = [
     # New Aug 19
-    '/DYJetsToQQ_HT180toInf_14TeV-madgraphMLM-pythia8_GenPt_250GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
-    '/DYJetsToQQ_HT180toInf_14TeV-madgraphMLM-pythia8_GenPt_500GeV/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v4/GEN',
-    '/DYJetsToTauTau_M-50_GenMET-100_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
-    '/DYJets_incl_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    '/DYToLL-M-50_0J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/DYToLL-M-50_1J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/DYToLL-M-50_2J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/DYToLL-M-50_3J_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/TTZToLLNuNu_M-10_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-
-    '/ST_s-channel_4f_InclusiveDecays_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/ST_s-channel_4f_InclusiveDecays_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
-    '/ST_s-channel_4f_leptonic_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/ST_tW_antitop_5f_NoFullyHadronicDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN',
-    '/ST_tW_antitop_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN',
-    '/ST_tW_top_5f_NoFUllyHadronicDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN',
-    '/ST_tW_top_5f_NoFUllyHadronicDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
-    '/ST_tW_top_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN',
-    '/ST_tW_top_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
-    '/ST_tch_14TeV_antitop_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
-    '/ST_tch_14TeV_top_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v3/GEN',
-    '/ST_tch_14TeV_top_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v1/GEN',
 
     # WAIT until later, not on disk yet! (Some non-ext appear here and above, leave it as is, have to keep exts grouped)
     #'/ST_s-channel_4f_leptonic_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
     #'/ST_s-channel_4f_leptonic_14TeV-amcatnlo-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
     #'/ST_tW_antitop_5f_NoFullyHadronicDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN',
     #'/ST_tW_antitop_5f_NoFullyHadronicDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v2/GEN',
-    #'/ST_tW_antitop_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v2/GEN',
-    #'/ST_tW_antitop_5f_inclusiveDecays_14TeV-powheg-pythia8_TuneCUETP8M1/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v3/GEN',
     #'/ST_tch_14TeV_antitop_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-91X_upgrade2023_realistic_v3-v1/GEN',
     #'/ST_tch_14TeV_antitop_incl-powheg-pythia8-madspin/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5_ext1-v1/GEN',
-    #'/QCD_Pt-15to7000_MuEnrichedPt5_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-91X_upgrade2023_realistic_v3-v1/GEN',
+    #
     #'/QCD_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/QCDBBar_Pt-15to7000_MuEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    #
     #'/QCDCCbar_Pt-15to7000_MuEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
 
     ]
@@ -316,11 +330,16 @@ samplelist_Oguz = [
     ]
 
 samplelist_Michele = [
+    # New Sept 16
+    '/DoublyChargedHiggsTo4L_M-1100_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsTo4L_M-1300_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsTo4L_M-300_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsTo4L_M-500_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsTo4L_M-700_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsTo4L_M-900_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsToMuMu_M-800_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+
     # New Aug 19
-    '/GluGluToHHTo2B2G_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/GluGluToHHTo2B2G_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    '/GluGluToHHTo2B2G_node_cHHH2p45_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v3/GEN',
-    '/GluGluToHHTo2B2G_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     '/GluGluToHHTo2B2Tau_node_cHHH0_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
     '/GluGluToHHTo2B2Tau_node_cHHH1_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v2/GEN',
     '/GluGluToHHTo2B2Tau_node_cHHH5_TuneCP5_14TeV-powheg-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v6/GEN',
@@ -382,6 +401,13 @@ samplelist_Nan = [
 ]
 
 samplelist_Gamze = [
+    # New Sept 19
+    '/WW_DoubleScattering_14TeV-pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/GJet_Pt-20toInf_DoubleEMEnriched_MGG-40to80_TuneCUEP8M2T4_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/QCD_Pt-30toInf_DoubleEMEnriched_MGG-40to80_TuneCUEP8M2T4_14TeV_Pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/QCD_Pt-5toInf_EMEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/QCD_Mdijet-1000toInf_TuneCUETP8M1_14TeV-pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+
     # New Aug 19
     '/WGGJets_TuneCP5_14TeV_madgraphMLM_pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     '/WGJJToLNu_EWK_QCD_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
@@ -471,23 +497,18 @@ samplelist_TBA = [ #to be assigned later!
     '/QCD_Pt-40toInf_DoubleEMEnriched_MGG-80toInf_TuneCUEP8M2T4_14TeV_Pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     '/QCD_Pt-470to600_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     '/QCD_Pt-30to40_DoubleEMEnriched_MGG-80toInf_TuneCUEP8M2T4_14TeV_Pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v3/GEN',
+    '/QCD_Pt-300to470_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
+    '/QCD_Pt-800to1000_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
 
     # WAIT til later, not on disk yet!
     #'/WW_TuneCUETP8M1_14TeV-pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/WW_DoubleScattering_14TeV-pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     #'/DiPhotonJetsBox_MGG-40to80_14TeV-Sherpa/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/GJet_Pt-20toInf_DoubleEMEnriched_MGG-40to80_TuneCUEP8M2T4_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/QCD_Pt-30toInf_DoubleEMEnriched_MGG-40to80_TuneCUEP8M2T4_14TeV_Pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     #'/QCD_Pt-20to7000_EMEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     #'/QCD_Pt-15to7000_bcToE_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     #'/QCD_Pt-5toInf_MuEnrichedPt5_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/QCD_Pt-5toInf_EMEnriched_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     #'/QCD_Pt-0to300_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/QCD_Pt-300to470_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     #'/QCD_Pt-600to800_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/QCD_Pt-800to1000_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     #'/QCD_Pt-1000_TuneCUETP8M1_14TeV_pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
-    #'/QCD_Mdijet-1000toInf_TuneCUETP8M1_14TeV-pythia8/PhaseIISummer17GenOnly-93X_upgrade2023_realistic_v5-v1/GEN',
 
 ]
 
@@ -504,10 +525,10 @@ for sample in samplelist_Wenyu:
 
     # print file list to a .txt                                                                              
     if '_ext' not in sample:
-       os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" > fileLists/'+sample.split('/')[1]+'_200PU.txt')
-       fileList.append('fileLists/'+sample.split('/')[1]+'_200PU.txt')
+        os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" > fileLists/'+sample.split('/')[1]+'_200PU.txt')
+        fileList.append('fileLists/'+sample.split('/')[1]+'_200PU.txt')
     else:
-       os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" >> fileLists/'+sample.split('/')[1]+'_200PU.txt')
+        os.system('/cvmfs/cms.cern.ch/common/dasgoclient --limit=0 --query="file dataset = '+sample+'" >> fileLists/'+sample.split('/')[1]+'_200PU.txt')
 
     # ----------------------------------------------------------------
     # Theses are utilities that are helpful in case of need...
