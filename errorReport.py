@@ -1,4 +1,5 @@
 import os,re,subprocess
+# coding: utf-8
 
 # Create and import the lists of samples to run
 print 'Creating and importing file lists...'
@@ -23,6 +24,7 @@ for sample in fileList:
 
     totaljobs = 0
     totaldone = 0
+    total_files = 0
     for ilog in range(len(starts)):        
         start = starts[ilog]
         if start > 0: start = start+1
@@ -40,6 +42,7 @@ for sample in fileList:
         digits = out.find(' ')
         jobs = int("".join(out[0:digits]))
         if totaljobs < jobs: totaljobs = jobs 
+        total_files = totaldone + jobs # all done before last plus last time job number 
         
         command = 'grep "exceeding requested memory" '+thislog+' | wc'
         proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
@@ -97,4 +100,6 @@ for sample in fileList:
         print '\t\tDONE = ',done,'/',jobs,'=',round(100*float(done)/float(jobs),2),'%, TOTAL DONE =',round(100*float(totaldone)/float(totaljobs),2),'%'
         
         print '\t\tUnknown (running?) =',max(0,jobs-done-crash-odisk-omemdocker-omem-otime),'/',jobs
+
+    print '\n Total files done (correct calculation in total input) = ', totaldone, '/', total_files, ' ≈', round(100*float(totaldone)/float(total_files),2),'%'
 
