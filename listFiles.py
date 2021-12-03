@@ -430,10 +430,10 @@ samplelist_Michele = [
     ]
 
 samplelist_Nan = [
-    ## NOT READY to resubmit as of 10/29
-    #'/VBFHToGG_M124_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/VBFHHTo2G2Tau_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
-    #'/VHToGG_M127_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    ## READY as of Dec 02
+    '/VBFHToGG_M124_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/VBFHHTo2G2Tau_CV_1_C2V_1_C3_0_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN', 
+    '/VHToGG_M127_TuneCP5_14TeV-amcatnloFXFX-madspin-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
     
     ## Need an update in the spreadsheet!! 10/29
     '/VBFHToGG_M123_TuneCP5_14TeV-amcatnlo-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
