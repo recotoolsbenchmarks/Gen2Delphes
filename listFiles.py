@@ -386,6 +386,9 @@ samplelist_Oguz = [
     ]
 
 samplelist_Michele = [
+    # new Dec 08
+    '/VBFHHTo2B2G_CV_1_C2V_1_C3_1_TuneCP5_14TeV-madgraph-pythia8/SnowmassWinter21wmLHEGEN-110X_mcRun4_realistic_v3-v1/GEN',
+
     # Updated list Oct 13, already submitted 
     '/DYJets_incl_MLL-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v1/GEN',
     
