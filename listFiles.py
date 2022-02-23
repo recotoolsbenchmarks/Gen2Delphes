@@ -630,17 +630,17 @@ samplelist_Michele = [
     '/VHToNonbb_M125_14TeV_amcatnloFXFX_madspin_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     '/VVTo2L2Nu_14TeV_amcatnloFXFX_madspin_pythia8/PhaseIISummer17wmLHEGENOnly-93X_upgrade2023_realistic_v5-v2/GEN',
     
-    # New Feb 23
-    ‘/DoublyChargedHiggsTo4L_M-1500_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
-    ‘/DoublyChargedHiggsTo4L_M-1700_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
-    ‘/DoublyChargedHiggsToEMu_M-300_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
-    ‘/DoublyChargedHiggsToEMu_M-500_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
-    ‘/DoublyChargedHiggsToEMu_M-700_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
-    ‘/DoublyChargedHiggsToEMu_M-900_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
-    ‘/DoublyChargedHiggsToEMu_M-1100_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
-    ‘/DoublyChargedHiggsToEMu_M-1300_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
-    ‘/DoublyChargedHiggsToEMu_M-1500_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
-    ‘/DoublyChargedHiggsToEMu_M-1700_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN’,
+    # New Feb 23/2022
+    '/DoublyChargedHiggsTo4L_M-1500_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsTo4L_M-1700_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsToEMu_M-300_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsToEMu_M-500_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsToEMu_M-700_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsToEMu_M-900_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsToEMu_M-1100_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsToEMu_M-1300_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsToEMu_M-1500_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
+    '/DoublyChargedHiggsToEMu_M-1700_TuneCP5_14TeV-pythia8/SnowmassWinter21GEN-110X_mcRun4_realistic_v3-v1/GEN',
     ]
 
 samplelist_Nan = [
